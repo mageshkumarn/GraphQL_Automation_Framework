@@ -17,7 +17,7 @@ namespace Titan.UFC.GraphQL.Setup
         {
             ReportHelper.ExtentReports.AddSystemInfo("Test Environment", Constants.TestEnvironment);
             ReportHelper.ExtentReports.AddSystemInfo("Author", "Magesh Kumar");
-            ReportHelper.ExtentReports.AddSystemInfo("Contact", "MageshKumar.N@Resideo.com");
+            ReportHelper.ExtentReports.AddSystemInfo("Contact", "MageshKumar.N@myOrg.com");
         }
 
         [SetUp]
