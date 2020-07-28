@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Automation Report</title>
+  <link rel="apple-touch-icon" href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png">
+  <link rel="shortcut icon" href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png">
+  <link href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/cd00a5e/spark/css/style.css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style> 
+                
+            </style>
+</head>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+
+
+<body class="test-view  standard">
+    <div class="app header-dark side-nav-folded">
+        <div class="layout">
+            <div class="header navbar">
+    <div class="header-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+          </a>
+        </div>
+        <ul class="nav-left">
+          <li>
+            <a class="sidenav-fold-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a class="sidenav-expand-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <a class="search-toggle" href="javascript:void(0);">
+              <i class="search-icon fa fa-search"></i>
+              <i class="search-icon-close fa fa-close"></i>
+            </a>
+          </li>
+          <li class="search-input">
+            <input id="search-tests" class="form-control" type="text" placeholder="Type to search...">
+          </li>
+        </ul>
+        <ul class="nav-right">
+          <li class="m-r-10">
+            <a href="#">
+              <span class="badge badge-primary">GraphQL Automation Run</span>
+            </a>
+          </li>
+            <li class="m-r-10">
+                <a href="#">
+                    <span class="badge badge-primary">7/28/2020 6:36:27 PM</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+            <div class="side-nav side-nav-folded">
+  <div class="side-nav-inner">
+    <ul class="side-nav-menu scrollable">
+      <li class="nav-item dropdown">
+        <a id="nav-test" class="dropdown-toggle" href="index.html">
+          <span class="icon-holder">
+            <i class="fa fa-align-left"></i>
+          </span>
+          <span class="title">Tests</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a id="nav-tag" class="dropdown-toggle" href="tag.html">
+          <span class="icon-holder">
+            <i class="fa fa-tag"></i>
+          </span>
+          <span class="title">Tags</span>
+        </a>
+      </li>
+            <li class="nav-item dropdown">
+        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
+          <span class="icon-holder">
+            <i class="fa fa-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="side-nav-controls">
+    <ul>
+      <li>
+        <a href="#" class="lightsout" style="color:#8a8a8a;">
+          <i class="fa fa-desktop"></i>"</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+            <div class="page-container">
+                <div class="main-content">
+                    <div class="test-wrapper row">
+                        <div class="test-list">
+                            <div class="test-list-tools">
+                                <ul class="tools pull-left">
+                                    <li>
+                                        <a href="">
+                                            <span class="font-size-14">Tests</span>
+                                        </a>
+                                    </li> 
+                                </ul>
+                                <ul class="tools text-right">
+									<li class="user-profile dropdown dropdown-animated scale-left">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											<i class="fa fa-exclamation-circle"></i>
+										</a>
+										<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a status="pass" class="dropdown-item" href="#"><span>Pass</span><span class="status success pull-right"></span></a>											<a status="fail" class="dropdown-item" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>																																																							<div class="dropdown-divider"></div>
+											<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+										</ul>
+									</li>
+																		<li class="user-profile dropdown dropdown-animated scale-left">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											<i class="fa fa-tag"></i>
+										</a>
+										<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+												<a class="dropdown-item" href="#">CountriesTest</a>
+										</ul>
+                                    </li>
+									                                </ul>
+                            </div>
+                            <div class="test-list-wrapper scrollable">
+                                <ul class="test-list-item">
+										<li class="test-item" status="pass" author="" device="" tag="CountriesTest"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">Get All Countries</p> 
+													<p class="duration text-sm">0h:0m:1s+179ms</p> 
+													<span class="datetime">18:36:27 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">Get All Countries</h5>
+															<span class='badge badge-success'>7/28/2020 6:36:27 PM</span>
+															<span class='badge badge-danger'>7/28/2020 6:36:29 PM</span>
+															<span class='badge badge-default'>0h:0m:1s+179ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> CountriesTest</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:36:27</td>
+				<td>
+URL: https://countries-274616.ew.r.appspot.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:36:27</td>
+				<td>
+Request Object									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-low_priority text-debug"></i></td>
+				<td>18:36:27</td>
+				<td>
+<div class='json-tree' id='code-block-json-1'></div><script>function jsonTreeCreate1() { document.getElementById('code-block-json-1').innerHTML = JSONTree.create({"query":"{\r\n\t                        Country{\r\n                            _id\r\n                            name\r\n                          }\r\n                        }","variables":null}); }jsonTreeCreate1();</script>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:36:28</td>
+				<td>
+<span class='badge indigo-text yellow'>Response Code: 200 - OK</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-low_priority text-debug"></i></td>
+				<td>18:36:28</td>
+				<td>
+<div class='json-tree' id='code-block-json-2'></div><script>function jsonTreeCreate2() { document.getElementById('code-block-json-2').innerHTML = JSONTree.create({"data":{"Country":[{"_id":"3","name":"Afghanistan"},{"_id":"27","name":"Åland Islands"},{"_id":"51","name":"Albania"},{"_id":"74","name":"Algeria"},{"_id":"105","name":"American Samoa"},{"_id":"129","name":"Andorra"},{"_id":"147","name":"Angola"},{"_id":"167","name":"Anguilla"},{"_id":"186","name":"Antarctica"},{"_id":"213","name":"Antigua and Barbuda"},{"_id":"232","name":"Argentina"},{"_id":"261","name":"Armenia"},{"_id":"285","name":"Aruba"},{"_id":"303","name":"Australia"},{"_id":"323","name":"Austria"},{"_id":"343","name":"Azerbaijan"},{"_id":"362","name":"Bahamas"},{"_id":"380","name":"Bahrain"},{"_id":"398","name":"Bangladesh"},{"_id":"417","name":"Barbados"},{"_id":"433","name":"Belarus"},{"_id":"458","name":"Belgium"},{"_id":"482","name":"Belize"},{"_id":"503","name":"Benin"},{"_id":"522","name":"Bermuda"},{"_id":"542","name":"Bhutan"},{"_id":"561","name":"Bolivia (Plurinational State of)"},{"_id":"586","name":"Bonaire, Sint Eustatius and Saba"},{"_id":"600","name":"Bosnia and Herzegovina"},{"_id":"621","name":"Botswana"},{"_id":"641","name":"Bouvet Island"},{"_id":"661","name":"Brazil"},{"_id":"681","name":"British Indian Ocean Territory"},{"_id":"697","name":"United States Minor Outlying Islands"},{"_id":"713","name":"Virgin Islands (British)"},{"_id":"729","name":"Virgin Islands (U.S.)"},{"_id":"746","name":"Brunei Darussalam"},{"_id":"768","name":"Bulgaria"},{"_id":"787","name":"Burkina Faso"},{"_id":"804","name":"Burundi"},{"_id":"824","name":"Cambodia"},{"_id":"842","name":"Cameroon"},{"_id":"860","name":"Canada"},{"_id":"882","name":"Cabo Verde"},{"_id":"901","name":"Cayman Islands"},{"_id":"917","name":"Central African Republic"},{"_id":"935","name":"Chad"},{"_id":"953","name":"Chile"},{"_id":"973","name":"China"},{"_id":"997","name":"Christmas Island"},{"_id":"1012","name":"Cocos (Keeling) Islands"},{"_id":"1028","name":"Colombia"},{"_id":"1046","name":"Comoros"},{"_id":"1066","name":"Congo"},{"_id":"1083","name":"Congo (Democratic Republic of the)"},{"_id":"1105","name":"Cook Islands"},{"_id":"1123","name":"Costa Rica"},{"_id":"1141","name":"Croatia"},{"_id":"1160","name":"Cuba"},{"_id":"1179","name":"Curaçao"},{"_id":"1197","name":"Cyprus"},{"_id":"1219","name":"Czech Republic"},{"_id":"1239","name":"Denmark"},{"_id":"1259","name":"Djibouti"},{"_id":"1281","name":"Dominica"},{"_id":"1299","name":"Dominican Republic"},{"_id":"1317","name":"Ecuador"},{"_id":"1334","name":"Egypt"},{"_id":"1351","name":"El Salvador"},{"_id":"1368","name":"Equatorial Guinea"},{"_id":"1387","name":"Eritrea"},{"_id":"1409","name":"Estonia"},{"_id":"1428","name":"Ethiopia"},{"_id":"1448","name":"Falkland Islands (Malvinas)"},{"_id":"1465","name":"Faroe Islands"},{"_id":"1485","name":"Fiji"},{"_id":"1509","name":"Finland"},{"_id":"1528","name":"France"},{"_id":"1548","name":"French Guiana"},{"_id":"1565","name":"French Polynesia"},{"_id":"1584","name":"French Southern Territories"},{"_id":"1598","name":"Gabon"},{"_id":"1615","name":"Gambia"},{"_id":"1632","name":"Georgia"},{"_id":"1650","name":"Germany"},{"_id":"1667","name":"Ghana"},{"_id":"1683","name":"Gibraltar"},{"_id":"1699","name":"Greece"},{"_id":"1717","name":"Greenland"},{"_id":"1734","name":"Grenada"},{"_id":"1749","name":"Guadeloupe"},{"_id":"1765","name":"Guam"},{"_id":"1783","name":"Guatemala"},{"_id":"1799","name":"Guernsey"},{"_id":"1817","name":"Guinea"},{"_id":"1835","name":"Guinea-Bissau"},{"_id":"1852","name":"Guyana"},{"_id":"1869","name":"Haiti"},{"_id":"1889","name":"Heard Island and McDonald Islands"},{"_id":"1903","name":"Holy See"},{"_id":"1922","name":"Honduras"},{"_id":"1940","name":"Hong Kong"},{"_id":"1957","name":"Hungary"},{"_id":"1974","name":"Iceland"},{"_id":"1995","name":"India"},{"_id":"2014","name":"Indonesia"},{"_id":"2034","name":"Côte d'Ivoire"},{"_id":"2052","name":"Iran (Islamic Republic of)"},{"_id":"2071","name":"Iraq"},{"_id":"2090","name":"Ireland"},{"_id":"2109","name":"Isle of Man"},{"_id":"2128","name":"Israel"},{"_id":"2147","name":"Italy"},{"_id":"2164","name":"Jamaica"},{"_id":"2180","name":"Japan"},{"_id":"2199","name":"Jersey"},{"_id":"2217","name":"Jordan"},{"_id":"2235","name":"Kazakhstan"},{"_id":"2262","name":"Kenya"},{"_id":"2280","name":"Kiribati"},{"_id":"2300","name":"Kuwait"},{"_id":"2318","name":"Kyrgyzstan"},{"_id":"2339","name":"Lao People's Democratic Republic"},{"_id":"2360","name":"Latvia"},{"_id":"2378","name":"Lebanon"},{"_id":"2396","name":"Lesotho"},{"_id":"2416","name":"Liberia"},{"_id":"2433","name":"Libya"},{"_id":"2451","name":"Liechtenstein"},{"_id":"2469","name":"Lithuania"},{"_id":"2487","name":"Luxembourg"},{"_id":"2507","name":"Macao"},{"_id":"2527","name":"Macedonia (the former Yugoslav Republic of)"},{"_id":"2545","name":"Madagascar"},{"_id":"2565","name":"Malawi"},{"_id":"2583","name":"Malaysia"},{"_id":"2600","name":"Maldives"},{"_id":"2620","name":"Mali"},{"_id":"2637","name":"Malta"},{"_id":"2655","name":"Marshall Islands"},{"_id":"2673","name":"Martinique"},{"_id":"2688","name":"Mauritania"},{"_id":"2706","name":"Mauritius"},{"_id":"2724","name":"Mayotte"},{"_id":"2741","name":"Mexico"},{"_id":"2760","name":"Micronesia (Federated States of)"},{"_id":"2777","name":"Moldova (Republic of)"},{"_id":"2796","name":"Monaco"},{"_id":"2813","name":"Mongolia"},{"_id":"2830","name":"Montenegro"},{"_id":"2846","name":"Montserrat"},{"_id":"2860","name":"Morocco"},{"_id":"2878","name":"Mozambique"},{"_id":"2896","name":"Myanmar"},{"_id":"2916","name":"Namibia"},{"_id":"2935","name":"Nauru"},{"_id":"2956","name":"Nepal"},{"_id":"2976","name":"Netherlands"},{"_id":"2992","name":"New Caledonia"},{"_id":"3007","name":"New Zealand"},{"_id":"3025","name":"Nicaragua"},{"_id":"3043","name":"Niger"},{"_id":"3061","name":"Nigeria"},{"_id":"3080","name":"Niue"},{"_id":"3096","name":"Norfolk Island"},{"_id":"3112","name":"Korea (Democratic People's Republic of)"},{"_id":"3132","name":"Northern Mariana Islands"},{"_id":"3149","name":"Norway"},{"_id":"3169","name":"Oman"},{"_id":"3187","name":"Pakistan"},{"_id":"3206","name":"Palau"},{"_id":"3224","name":"Palestine, State of"},{"_id":"3242","name":"Panama"},{"_id":"3260","name":"Papua New Guinea"},{"_id":"3278","name":"Paraguay"},{"_id":"3297","name":"Peru"},{"_id":"3315","name":"Philippines"},{"_id":"3333","name":"Pitcairn"},{"_id":"3349","name":"Poland"},{"_id":"3368","name":"Portugal"},{"_id":"3386","name":"Puerto Rico"},{"_id":"3404","name":"Qatar"},{"_id":"3422","name":"Republic of Kosovo"},{"_id":"3432","name":"Réunion"},{"_id":"3447","name":"Romania"},{"_id":"3466","name":"Russian Federation"},{"_id":"3486","name":"Rwanda"},{"_id":"3506","name":"Saint Barthélemy"},{"_id":"3523","name":"Saint Helena, Ascension and Tristan da Cunha"},{"_id":"3539","name":"Saint Kitts and Nevis"},{"_id":"3555","name":"Saint Lucia"},{"_id":"3570","name":"Saint Martin (French part)"},{"_id":"3586","name":"Saint Pierre and Miquelon"},{"_id":"3602","name":"Saint Vincent and the Grenadines"},{"_id":"3617","name":"Samoa"},{"_id":"3635","name":"San Marino"},{"_id":"3652","name":"Sao Tome and Principe"},{"_id":"3670","name":"Saudi Arabia"},{"_id":"3688","name":"Senegal"},{"_id":"3705","name":"Serbia"},{"_id":"3725","name":"Seychelles"},{"_id":"3744","name":"Sierra Leone"},{"_id":"3761","name":"Singapore"},{"_id":"3780","name":"Sint Maarten (Dutch part)"},{"_id":"3791","name":"Slovakia"},{"_id":"3808","name":"Slovenia"},{"_id":"3826","name":"Solomon Islands"},{"_id":"3842","name":"Somalia"},{"_id":"3863","name":"South Africa"},{"_id":"3887","name":"South Georgia and the South Sandwich Islands"},{"_id":"3903","name":"Korea (Republic of)"},{"_id":"3920","name":"South Sudan"},{"_id":"3936","name":"Spain"},{"_id":"3953","name":"Sri Lanka"},{"_id":"3972","name":"Sudan"},{"_id":"3990","name":"Suriname"},{"_id":"4010","name":"Svalbard and Jan Mayen"},{"_id":"4026","name":"Swaziland"},{"_id":"4047","name":"Sweden"},{"_id":"4065","name":"Switzerland"},{"_id":"4085","name":"Syrian Arab Republic"},{"_id":"4103","name":"Taiwan"},{"_id":"4123","name":"Tajikistan"},{"_id":"4144","name":"Tanzania, United Republic of"},{"_id":"4162","name":"Thailand"},{"_id":"4184","name":"Timor-Leste"},{"_id":"4204","name":"Togo"},{"_id":"4222","name":"Tokelau"},{"_id":"4237","name":"Tonga"},{"_id":"4254","name":"Trinidad and Tobago"},{"_id":"4271","name":"Tunisia"},{"_id":"4289","name":"Turkey"},{"_id":"4308","name":"Turkmenistan"},{"_id":"4324","name":"Turks and Caicos Islands"},{"_id":"4339","name":"Tuvalu"},{"_id":"4355","name":"Uganda"},{"_id":"4373","name":"Ukraine"},{"_id":"4391","name":"United Arab Emirates"},{"_id":"4409","name":"United Kingdom of Great Britain and Northern Ireland"},{"_id":"4425","name":"United States of America"},{"_id":"4441","name":"Uruguay"},{"_id":"4459","name":"Uzbekistan"},{"_id":"4478","name":"Vanuatu"},{"_id":"4498","name":"Venezuela (Bolivarian Republic of)"},{"_id":"4516","name":"Viet Nam"},{"_id":"4535","name":"Wallis and Futuna"},{"_id":"4552","name":"Western Sahara"},{"_id":"4567","name":"Yemen"},{"_id":"4585","name":"Zambia"},{"_id":"4602","name":"Zimbabwe"}]}}
+); }jsonTreeCreate2();</script>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>18:36:29</td>
+				<td>
+<span class='badge black-text green'>Test completed with Pass</span>									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="fail" author="" device="" tag="CountriesTest"> 
+											<div class="status-avatar fail-bg">
+												<i class="fa fa-times text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">Failure TestCase</p> 
+													<p class="duration text-sm">0h:0m:0s+752ms</p> 
+													<span class="datetime">18:36:29 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-fail">Failure TestCase</h5>
+															<span class='badge badge-success'>7/28/2020 6:36:29 PM</span>
+															<span class='badge badge-danger'>7/28/2020 6:36:29 PM</span>
+															<span class='badge badge-default'>0h:0m:0s+752ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> CountriesTest</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:36:29</td>
+				<td>
+<span class='badge brown-text grey'>Description: This is for report validation</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:36:29</td>
+				<td>
+URL: https://countries-274616.ew.r.appspot.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:36:29</td>
+				<td>
+Request Object									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-low_priority text-debug"></i></td>
+				<td>18:36:29</td>
+				<td>
+<div class='json-tree' id='code-block-json-3'></div><script>function jsonTreeCreate3() { document.getElementById('code-block-json-3').innerHTML = JSONTree.create({"query":"query($id:String){\r\n                          Country{\r\n                            name}\r\n                          Timezone{\r\n                            _id\r\n                            countries(_id:$id)\r\n                          }\r\n                        }","variables":{"id":"51"}}); }jsonTreeCreate3();</script>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:36:29</td>
+				<td>
+<span class='badge indigo-text yellow'>Response Code: 400 - BadRequest</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-low_priority text-debug"></i></td>
+				<td>18:36:29</td>
+				<td>
+<div class='json-tree' id='code-block-json-4'></div><script>function jsonTreeCreate4() { document.getElementById('code-block-json-4').innerHTML = JSONTree.create({"errors":[{"message":"Field \"countries\" of type \"[Country]\" must have a selection of subfields. Did you mean \"countries { ... }\"?","locations":[{"line":6,"column":29}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Unknown argument \"_id\" on field \"countries\" of type \"Timezone\".","locations":[{"line":6,"column":39}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}]}
+); }jsonTreeCreate4();</script>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>18:36:29</td>
+				<td>
+<span class='badge black-text red'>Exception Occured: Message: [{"message":"Field \"countries\" of type \"[Country]\" must have a selection of subfields. Did you mean \"countries { ... }\"?","locations":[{"line":6,"column":29}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Unknown argument \"_id\" on field \"countries\" of type \"Timezone\".","locations":[{"line":6,"column":39}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}]</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>18:36:29</td>
+				<td>
+<span class='badge black-text red'>Test Failed with Exception Occured: Message: [{"message":"Field \"countries\" of type \"[Country]\" must have a selection of subfields. Did you mean \"countries { ... }\"?","locations":[{"line":6,"column":29}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Unknown argument \"_id\" on field \"countries\" of type \"Timezone\".","locations":[{"line":6,"column":39}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}]</span>									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag="CountriesTest"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">Get a specific Country</p> 
+													<p class="duration text-sm">0h:0m:0s+678ms</p> 
+													<span class="datetime">18:36:29 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">Get a specific Country</h5>
+															<span class='badge badge-success'>7/28/2020 6:36:29 PM</span>
+															<span class='badge badge-danger'>7/28/2020 6:36:30 PM</span>
+															<span class='badge badge-default'>0h:0m:0s+678ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> CountriesTest</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:36:29</td>
+				<td>
+<span class='badge brown-text grey'>Description: To get a specific country information</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:36:29</td>
+				<td>
+URL: https://countries-274616.ew.r.appspot.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:36:29</td>
+				<td>
+Request Object									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-low_priority text-debug"></i></td>
+				<td>18:36:29</td>
+				<td>
+<div class='json-tree' id='code-block-json-5'></div><script>function jsonTreeCreate5() { document.getElementById('code-block-json-5').innerHTML = JSONTree.create({"query":"query($id:String) {\r\n\t                        Country(_id:$id) {\r\n                            _id\r\n                            name\r\n                          }\r\n                        }","variables":{"id":"51"}}); }jsonTreeCreate5();</script>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:36:30</td>
+				<td>
+<span class='badge indigo-text yellow'>Response Code: 200 - OK</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-low_priority text-debug"></i></td>
+				<td>18:36:30</td>
+				<td>
+<div class='json-tree' id='code-block-json-6'></div><script>function jsonTreeCreate6() { document.getElementById('code-block-json-6').innerHTML = JSONTree.create({"data":{"Country":[{"_id":"51","name":"Albania"}]}}
+); }jsonTreeCreate6();</script>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>18:36:30</td>
+				<td>
+<span class='badge black-text green'>Test completed with Pass</span>									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+                                </ul>    
+                            </div>
+                        </div>
+                        <div class="test-content scrollable">
+                            <div class="test-content-tools">
+                                <ul>
+                                    <li>
+                                        <a class="back-to-test" href="javascript:void(0)">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="test-content-detail">
+                                <div class="detail-body"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script type='text/javascript'>
+	
+</script>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/f97b667/spark/js/script.js"></script>
+
+</body>
+
+</html>
