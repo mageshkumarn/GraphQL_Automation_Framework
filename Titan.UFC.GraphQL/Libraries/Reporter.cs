@@ -3,11 +3,13 @@ using AventStack.ExtentReports.MarkupUtils;
 using AventStack.ExtentReports.Reporter;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
+using System;
 using System.IO;
 using Titan.UFC.GraphQL.Setup;
 
 namespace Titan.UFC.GraphQL.Libraries
 {
+    [Serializable]
     public abstract class ReportHelper
     {
         const string _DEFAULT_DOCUMENT_TITLE = "Automation Report";

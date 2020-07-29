@@ -5,6 +5,7 @@ using System.Reflection;
 
 namespace Titan.UFC.GraphQL.Setup
 {
+    [Serializable]
     public abstract class Constants
     {
         public static string FrameworkPath { get; }
