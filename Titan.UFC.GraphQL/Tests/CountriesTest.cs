@@ -65,5 +65,23 @@ namespace Tests
                 ReportHelper.LogFail(currentTest, "Exception Occured: Message: " + ex.Error.ToString());
             }
         }
+
+        [TestCase(TestName = "Mutation Example"),Ignore("This is a mutation Test and not working")]
+        public async Task MutationTestWithLaunch()
+        {
+            var query = @"mutation BookTrips {
+  bookTrips(launchIds: [67, 68, 69]) {
+    success
+    message
+    launches {
+      id
+    }
+  }
+}";
+            var responseObject = await GraphQLClient.QueryAsync(query);
+            Assert.IsNull(responseObject.GetException());
+            //var countryList = responseObject.GetParsedData<CountryList>();
+            //Assert.IsTrue(countryList.Country.Count == 250);
+        }
     }
 }

@@ -19,6 +19,7 @@ namespace Titan.UFC.GraphQL.Libraries
         public GraphQLClient(ExtentTest test)
         {
             this.test = test;
+            BaseURL = new Uri(Constants.URL);
         }
 
         private class GraphQLQuery
@@ -84,7 +85,6 @@ namespace Titan.UFC.GraphQL.Libraries
         {
             try
             {
-                BaseURL = new Uri(Constants.URL);
                 ReportHelper.LogInfo(test,"URL: " + Constants.URL);
                 var fullQuery = new GraphQLQuery()
                 {
@@ -103,6 +103,9 @@ namespace Titan.UFC.GraphQL.Libraries
                 using (HttpClient httpClient = new HttpClient())
                 {
                     httpClient.BaseAddress = BaseURL;
+
+                    //httpClient.DefaultRequestHeaders.Add("authorization", "ZGFpc3lAYXBvbGxvZ3JhcGhxbC5jb20=");
+
                     var response = await httpClient.PostAsync("graphql", requestObject);
                     ReportHelper.LogHighlight(test,$"Response Code: {(int)response.StatusCode} - {response.StatusCode}");
                     if (response.StatusCode.Equals(HttpStatusCode.OK))
