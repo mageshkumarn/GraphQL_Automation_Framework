@@ -21,7 +21,7 @@ namespace Tests
                           }
                         }";
             var variables = new { id = "51" };
-            var responseObject = await GraphQLClient.QueryAsync(query,variables);
+            var responseObject = await GraphQLClient.SendQueryAsync(query,variables);
             Assert.IsNull(responseObject.GetException());
             var countryList = responseObject.GetParsedData<CountryList>();
             Assert.AreEqual(countryList.Country.Count, 1);
@@ -36,7 +36,7 @@ namespace Tests
                             name
                           }
                         }";
-            var responseObject = await GraphQLClient.QueryAsync(query);
+            var responseObject = await GraphQLClient.SendQueryAsync(query);
             Assert.IsNull(responseObject.GetException());
             var countryList = responseObject.GetParsedData<CountryList>();
             Assert.IsTrue(countryList.Country.Count==250);
@@ -56,7 +56,7 @@ namespace Tests
             var variables = new { id = "51" };
             try
             {
-                var responseObject = await GraphQLClient.QueryAsync(query, variables);
+                var responseObject = await GraphQLClient.SendQueryAsync(query, variables);
                 var countryList = responseObject.GetParsedData<CountryList>();
             }
             catch(GraphQLException ex)
@@ -66,11 +66,11 @@ namespace Tests
             }
         }
 
-        [TestCase(TestName = "Mutation Example"),Ignore("This is a mutation Test and not working")]
+        [TestCase(TestName = "Mutation Example"),Order(1)]
         public async Task MutationTestWithLaunch()
         {
             var query = @"mutation BookTrips {
-  bookTrips(launchIds: [67, 68, 69]) {
+  bookTrips(launchIds: [67]) {
     success
     message
     launches {
@@ -78,7 +78,25 @@ namespace Tests
     }
   }
 }";
-            var responseObject = await GraphQLClient.QueryAsync(query);
+            var responseObject = await GraphQLClient.SendQueryAsync(query);
+            Assert.IsNull(responseObject.GetException());
+            //var countryList = responseObject.GetParsedData<CountryList>();
+            //Assert.IsTrue(countryList.Country.Count == 250);
+        }
+
+        [TestCase(TestName = "After Mutation Get Launch Example"),Order(2)]
+        public async Task MutationTestWithLaunch_After()
+        {
+            var query = @"{
+  launchesSelected(ids:[57]){
+    id
+    mission{
+      name
+    }
+    isBooked
+  }
+}";
+            var responseObject = await GraphQLClient.SendQueryAsync(query);
             Assert.IsNull(responseObject.GetException());
             //var countryList = responseObject.GetParsedData<CountryList>();
             //Assert.IsTrue(countryList.Country.Count == 250);

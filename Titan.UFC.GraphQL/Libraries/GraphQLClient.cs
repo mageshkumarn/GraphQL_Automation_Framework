@@ -11,6 +11,65 @@ using AventStack.ExtentReports;
 
 namespace Titan.UFC.GraphQL.Libraries
 {
+    public class GraphQLQuery
+    {
+        // public string OperationName { get; set; }
+        public string query { get; set; }
+        public object variables { get; set; }
+    }
+
+    public class GraphQLQueryResult
+    {
+        private string raw;
+        private JObject data;
+        private Exception Exception;
+        public GraphQLQueryResult(string text, Exception ex = null)
+        {
+            Exception = ex;
+            raw = text;
+            data = text != null ? JObject.Parse(text) : null;
+
+            if (!(ex is null))
+                throw ex;
+        }
+        public Exception GetException()
+        {
+            return Exception;
+        }
+        public string GetRawData()
+        {
+            return raw;
+        }
+        public T GetValue<T>(string key)
+        {
+            if (data == null) return default(T);
+            try
+            {
+                return JsonConvert.DeserializeObject<T>(this.data["data"][key].ToString());
+            }
+            catch
+            {
+                return default(T);
+            }
+        }
+        public dynamic GetValue(string key)
+        {
+            if (data == null) return null;
+            try
+            {
+                return JsonConvert.DeserializeObject<dynamic>(this.data["data"][key].ToString());
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public T GetParsedData<T>()
+        {
+            return JsonConvert.DeserializeObject<T>(this.data["data"].ToString());
+        }
+    }
+
     public class GraphQLClient
     {
         private ExtentTest test;
@@ -21,67 +80,7 @@ namespace Titan.UFC.GraphQL.Libraries
             this.test = test;
             BaseURL = new Uri(Constants.URL);
         }
-
-        private class GraphQLQuery
-        {
-            // public string OperationName { get; set; }
-            public string query { get; set; }
-            public object variables { get; set; }
-        }
-
-        public class GraphQLQueryResult
-        {
-            private string raw;
-            private JObject data;
-            private Exception Exception;
-            public GraphQLQueryResult(string text, Exception ex = null)
-            {
-                Exception = ex;
-                raw = text;
-                data = text != null ? JObject.Parse(text) : null;
-                
-                if(!(ex is null))
-                    throw ex;
-            }
-            public Exception GetException()
-            {
-                return Exception;
-            }
-            public string GetRawData()
-            {
-                return raw;
-            }
-            public T GetValue<T>(string key)
-            {
-                if (data == null) return default(T);
-                try
-                {
-                    return JsonConvert.DeserializeObject<T>(this.data["data"][key].ToString());
-                }
-                catch
-                {
-                    return default(T);
-                }
-            }
-            public dynamic GetValue(string key)
-            {
-                if (data == null) return null;
-                try
-                {
-                    return JsonConvert.DeserializeObject<dynamic>(this.data["data"][key].ToString());
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            public T GetParsedData<T>()
-            {
-                return JsonConvert.DeserializeObject<T>(this.data["data"].ToString());
-            }
-        }
-
-        public async Task<GraphQLQueryResult> QueryAsync(string query, object variables=null)
+        public async Task<GraphQLQueryResult> SendQueryAsync(string query, object variables=null)
         {
             try
             {
@@ -103,9 +102,7 @@ namespace Titan.UFC.GraphQL.Libraries
                 using (HttpClient httpClient = new HttpClient())
                 {
                     httpClient.BaseAddress = BaseURL;
-
-                    //httpClient.DefaultRequestHeaders.Add("authorization", "ZGFpc3lAYXBvbGxvZ3JhcGhxbC5jb20=");
-
+                    httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", "ZGFpc3lAYXBvbGxvZ3JhcGhxbC5jb20=");
                     var response = await httpClient.PostAsync("graphql", requestObject);
                     ReportHelper.LogHighlight(test,$"Response Code: {(int)response.StatusCode} - {response.StatusCode}");
                     if (response.StatusCode.Equals(HttpStatusCode.OK))
