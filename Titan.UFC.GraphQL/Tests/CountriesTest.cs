@@ -6,7 +6,7 @@ using Titan.UFC.GraphQL.Libraries;
 using Titan.UFC.GraphQL.Model;
 using Titan.UFC.GraphQL.Setup;
 
-namespace Tests
+namespace Titan.UFC.GraphQL.Tests
 {
     public class CountriesTest: BaseTest
     {

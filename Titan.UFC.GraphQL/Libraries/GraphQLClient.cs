@@ -94,16 +94,13 @@ namespace Titan.UFC.GraphQL.Libraries
                 ReportHelper.LogInfo(test,"Request Object");
                 ReportHelper.LogCodeBlock(test,jsonContent);
 
-                var buffer = Encoding.UTF8.GetBytes(jsonContent);
-                var requestObject = new ByteArrayContent(buffer);
-                requestObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                requestObject.Headers.ContentLength = buffer.Length;
-
                 using (HttpClient httpClient = new HttpClient())
                 {
                     httpClient.BaseAddress = BaseURL;
-                    httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", "ZGFpc3lAYXBvbGxvZ3JhcGhxbC5jb20=");
-                    var response = await httpClient.PostAsync("graphql", requestObject);
+                    httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", Constants.TestParameters.Authorization);
+                    ReportHelper.LogInfo(test, "Request Headers");
+                    ReportHelper.LogInfo(test, httpClient.DefaultRequestHeaders.ToString());
+                    var response = await httpClient.PostAsync("graphql", Utility.GetHttpContent(jsonContent));
                     ReportHelper.LogHighlight(test,$"Response Code: {(int)response.StatusCode} - {response.StatusCode}");
                     if (response.StatusCode.Equals(HttpStatusCode.OK))
                     {

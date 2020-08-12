@@ -2,9 +2,11 @@
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using System;
+using System.Threading.Tasks;
 using Titan.UFC.GraphQL.Libraries;
+using Titan.UFC.GraphQL.Setup;
 
-namespace Titan.UFC.GraphQL.Setup
+namespace Titan.UFC.GraphQL.Tests
 {
     [TestFixture]
     public class BaseTest
@@ -13,19 +15,19 @@ namespace Titan.UFC.GraphQL.Setup
         public ExtentTest currentTest;
 
         [OneTimeSetUp]
-        public void InitializeSuit()
+        public async Task InitializeSuit()
         {
             ReportHelper.ExtentReports.AddSystemInfo("Test Environment", Constants.TestEnvironment);
             ReportHelper.ExtentReports.AddSystemInfo("Author", "Magesh Kumar");
             ReportHelper.ExtentReports.AddSystemInfo("Contact", "MageshKumar.N@myOrg.com");
+            await RequestHelper.AuthorizeUserAsync();
         }
 
         [SetUp]
-        public void InitializeTest()
+        public void InitializeTestAsync()
         {
             currentTest = ReportHelper.ExtentReports.CreateTest(TestContext.CurrentContext.Test.Name);
             var className = TestContext.CurrentContext.Test.FullName.Split(".")[TestContext.CurrentContext.Test.FullName.Split(".").Length - 2];
-
             //var propertyBag = TestContext.CurrentContext.Test?.Properties["Category"];
             //var tagName = "";
             //foreach (var keys in propertyBag)

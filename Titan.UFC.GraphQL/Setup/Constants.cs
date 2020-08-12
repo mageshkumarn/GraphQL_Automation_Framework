@@ -13,6 +13,12 @@ namespace Titan.UFC.GraphQL.Setup
         public static string ReportConfigPath { get; }
         public static string URL { get; }
         public static string TestEnvironment { get; }
+        public static string LoginEmail { get; }
+
+        public static class TestParameters
+        {
+            public static string Authorization {get; set; }
+        }
 
         static Constants()
         {
@@ -30,6 +36,7 @@ namespace Titan.UFC.GraphQL.Setup
 
             URL = configuration["URL"];
             TestEnvironment = configuration["TestEnvironment"];
+            LoginEmail = configuration["LoginEmail"];
         }
     }
 }

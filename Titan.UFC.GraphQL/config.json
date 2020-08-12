@@ -1,4 +1,6 @@
 {
+  //"URL": "https://countries-274616.ew.r.appspot.com/",
   "URL": "http://localhost:4000/",
-  "TestEnvironment": "Dev"
+  "TestEnvironment": "Dev",
+  "LoginEmail": "sample@apollographql.com"
 }
